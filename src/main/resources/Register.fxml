@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="762.0" style="-fx-background-color: #8f8783;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegisterController">
+    <children>
+        <HBox prefHeight="121.0" prefWidth="762.0" style="-fx-background-color: #28252e; -fx-border-color: #4ea451; -fx-border-width: 4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Button fx:id="SignupRegister" mnemonicParsing="false" prefHeight="84.0" prefWidth="390.0" style="-fx-background-color: #4ea451;" text="Sign up" textFill="#f2f2f2">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </HBox.margin>
+                    <font>
+                        <Font name="Times New Roman" size="30.0" />
+                    </font>
+                </Button>
+            </children></HBox>
+        <AnchorPane layoutY="122.0" prefHeight="409.0" prefWidth="762.0" style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0">
+            <children>
+                <ChoiceBox fx:id="ChoiceBoxRegister" accessibleText="cvf" layoutX="520.0" layoutY="54.0" prefHeight="40.0" prefWidth="228.0">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets></ChoiceBox>
+                <Button fx:id="RegisterButon" layoutY="323.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="58.0" prefWidth="762.0" style="-fx-background-color: #4ea451;" text="Register" textFill="WHITE">
+                    <font>
+                        <Font name="Times New Roman" size="48.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="UsernameRegister" layoutX="520.0" layoutY="124.0" prefHeight="40.0" prefWidth="228.0" promptText="Username" />
+                <PasswordField fx:id="PasswordRegister" layoutX="520.0" layoutY="195.0" prefHeight="40.0" prefWidth="228.0" promptText="Password" />
+                <ImageView fitHeight="261.0" fitWidth="327.0" layoutX="63.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@ImagineSingUp.png" />
+                    </image></ImageView>
+            </children></AnchorPane>
+    </children>
+</AnchorPane>
