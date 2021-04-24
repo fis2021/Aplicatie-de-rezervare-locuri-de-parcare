@@ -8,7 +8,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="762.0" style="-fx-background-color: #28252e;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.RegisterController">
     <HBox prefHeight="116.0" prefWidth="762.0" style="-fx-background-color: #28252e; -fx-border-color: #4ea451; -fx-border-width: 4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-        <Button fx:id="SignupRegister" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="367.0" style="-fx-background-color: #4ea451;" text="Sign up" textFill="#f2f2f2">
+        <Button fx:id="LoginRegister" mnemonicParsing="false" onAction="#LoginPane" prefHeight="84.0" prefWidth="390.0" style="-fx-background-color: #4ea451;" text="Login" textFill="#f2f2f2">
+            <HBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+            <font>
+                <Font name="Times New Roman" size="40.0" />
+            </font>
+        </Button>
+        <Button fx:id="SignupRegister" layoutX="24.0" layoutY="24.0" mnemonicParsing="false" onAction="#RegisterPane" prefHeight="85.0" prefWidth="367.0" style="-fx-background-color: #4ea451;" text="Sign up" textFill="#f2f2f2">
             <font>
                 <Font name="Times New Roman" size="40.0" />
             </font>
@@ -17,7 +25,7 @@
             </HBox.margin>
         </Button>
     </HBox>
-    <AnchorPane fx:id="RegisterPane" layoutY="122.0" prefHeight="409.0" prefWidth="762.0" style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0">
+    <AnchorPane fx:id="RegisterPane" layoutY="122.0" prefHeight="409.0" prefWidth="762.0" style="-fx-background-color: #28252e;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0">
         <ChoiceBox fx:id="ChoiceBoxRegister" accessibleText="cvf" layoutX="520.0" layoutY="54.0" prefHeight="40.0" prefWidth="228.0">
         </ChoiceBox>
         <Button fx:id="RegisterButon" layoutY="323.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="58.0" prefWidth="762.0" style="-fx-background-color: #4ea451;" text="Register" textFill="WHITE">
@@ -30,5 +38,21 @@
         <ImageView fitHeight="261.0" fitWidth="327.0" layoutX="63.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@ImagineSingUp.png" />
         </ImageView>
+    </AnchorPane>
+    <AnchorPane fx:id="LoginPane" layoutX="261.0" layoutY="122.0" prefHeight="409.0" prefWidth="762.0" style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0">
+        <children>
+            <TextField fx:id="UsernameLogin" layoutX="520.0" layoutY="119.0" prefHeight="40.0" prefWidth="228.0" promptText="Username" />
+            <PasswordField fx:id="PasswordLogin" layoutX="520.0" layoutY="190.0" prefHeight="40.0" prefWidth="228.0" promptText="Password" />
+            <Button fx:id="LoginButon" layoutY="323.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="58.0" prefWidth="762.0" style="-fx-background-color: #4ea451;" text="Login" textFill="WHITE">
+                <font>
+                    <Font name="Times New Roman" size="48.0" />
+                </font>
+            </Button>
+            <ImageView fitHeight="253.0" fitWidth="279.0" layoutX="53.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@ImagineLogIn.jpg" />
+                </image>
+            </ImageView>
+        </children>
     </AnchorPane>
 </AnchorPane>
