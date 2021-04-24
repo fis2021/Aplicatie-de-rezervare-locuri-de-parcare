@@ -6,6 +6,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import org.loose.fis.sre.exceptions.*;
+import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.services.UserService;
 
 public class RegisterController {
@@ -14,7 +15,7 @@ public class RegisterController {
     private Button SignupRegister;
 
     @FXML
-    private ChoiceBox ChoiceBoxRegister;
+    private ChoiceBox<String> ChoiceBoxRegister;
 
     @FXML
     private TextField UsernameRegister;
@@ -33,37 +34,14 @@ public class RegisterController {
     @FXML
     public void handleRegisterAction() {
         try {
-
-            int nr = 0;
-            if((UsernameRegister.getText().equals("")) && !(PasswordRegister.getText().equals("")))
-                nr = 1;
-
-            if(!(UsernameRegister.getText().equals("")) && (PasswordRegister.getText().equals("")))
-                nr = 2;
-
-            if((UsernameRegister.getText().equals("")) && (PasswordRegister.getText().equals("")))
-                nr = 3;
-
-            if(!(UsernameRegister.getText().equals("")) && !(PasswordRegister.getText().equals("")))
-            {
-                nr = 4;
-                UserService.addUser(UsernameRegister.getText(), PasswordRegister.getText(), (String) ChoiceBoxRegister.getValue());
+            if(ChoiceBoxRegister.getValue() == null || (UsernameRegister.getText().equals(""))|| (PasswordRegister.getText().equals("")))
+                RegistrationExceptii.displayInvalid();
+            else{
+                UserService.addUser(UsernameRegister.getText(), PasswordRegister.getText(), ChoiceBoxRegister.getValue());
+                RegistrationExceptii.displayValid();
             }
-
-            switch (nr){
-                case 1 :    ExceptieUsernameGol.display(); break;
-                case 2 :    ExceptiePasswordGol.display(); break;
-                case 3 :    ExceptieUsernameAndPasswordGoale.display(); break;
-                case 4 :    ExceptieUsernameValid.displayValid(); break;
-                default:
-                    System.out.println("Eroare la exceptii Register.");
-            }
-
         } catch (UsernameAlreadyExistsException e) {
-
-            ExceptieUsernameInvalid.displayInvalid();
+            RegistrationExceptii.displayInvalid();
         }
     }
-
-
 }

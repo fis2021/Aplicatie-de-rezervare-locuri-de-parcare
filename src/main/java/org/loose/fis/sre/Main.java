@@ -16,7 +16,7 @@ public class Main extends Application {
         initDirectory();
         UserService.initDatabase();
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("Register.fxml"));
-        primaryStage.setTitle("Registration Example");
+        primaryStage.setTitle("Aplicatie de rezervare locuri de parcare");
         primaryStage.setScene(new Scene(root, 770, 532));
         primaryStage.show();
 
