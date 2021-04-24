@@ -5,8 +5,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
-import org.loose.fis.sre.exceptions.*;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
+import org.loose.fis.sre.exceptions.RegistrationExceptii;
 import org.loose.fis.sre.services.UserService;
 
 public class RegisterController {
