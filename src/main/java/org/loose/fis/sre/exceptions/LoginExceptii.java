@@ -3,20 +3,18 @@ package org.loose.fis.sre.exceptions;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ExceptieUsernameValid {
-    public static void displayValid(){
-        Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setMaxWidth(400);
+public class LoginExceptii {
 
+    public static void displayInvalid(){
+        Stage window = new Stage();
         Parent root = null;
+
         try {
-            root = FXMLLoader.load(ExceptieUsernameValid.class.getClassLoader().getResource("ExceptieValidareReusita.fxml"));
+            root = FXMLLoader.load(RegistrationExceptii.class.getClassLoader().getResource("InvalidLoginException.fxml"));
         } catch (IOException e) {
             e.printStackTrace();
         }
