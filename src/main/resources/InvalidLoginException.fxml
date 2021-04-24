@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="142.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.exceptions.LoginExceptii">
+    <VBox layoutX="133.0" layoutY="-66.0" prefHeight="142.0" prefWidth="348.0" style="-fx-border-color: #858585; -fx-border-width: 7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <Label prefHeight="48.0" prefWidth="354.0" text=" Eroare login!">
+            <font>
+                <Font size="20.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="50.0" left="50.0" top="50.0" />
+            </VBox.margin>
+            <graphic>
+                <ImageView fitHeight="48.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@Error.jpg"/>
+                </ImageView>
+            </graphic>
+        </Label>
+    </VBox>
+</AnchorPane>
