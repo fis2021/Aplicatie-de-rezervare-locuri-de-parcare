@@ -45,6 +45,7 @@ public class RegisterController {
 
     @FXML
     private AnchorPane LoginPane;
+
     @FXML
     public void initialize() {
         ChoiceBoxRegister.getItems().addAll("Client", "Administatror Mall");
@@ -72,7 +73,8 @@ public class RegisterController {
             if((UsernameLogin.getText().equals("")) || (PasswordLogin.getText().equals("")))
                 LoginExceptii.displayInvalid();
             else {
-                UserService.checkAccountInformations(UsernameLogin.getText(), PasswordLogin.getText());
+                UserService.checkAccountInformations(UsernameLogin.getText(),PasswordLogin.getText());
+                MainStageController.display();
             }
 
         } catch (Exception e) {
