@@ -54,7 +54,6 @@ public class RegisterController {
     @FXML
     public void handleRegisterAction() {
         try {
-
             if (ChoiceBoxRegister.getValue() == null || (UsernameRegister.getText().equals("")) || (PasswordRegister.getText().equals("")))
                 RegistrationExceptii.displayInvalid();
             else {
@@ -69,13 +68,12 @@ public class RegisterController {
 
     public void handleLoginAction() {
         try {
-
-            if((UsernameLogin.getText().equals("")) || (PasswordLogin.getText().equals("")))
-                LoginExceptii.displayInvalid();
-            else {
-                UserService.checkAccountInformations(UsernameLogin.getText(),PasswordLogin.getText());
+            if((!(UsernameLogin.getText().equals("")) && !(PasswordLogin.getText().equals(""))) &&
+                    (UserService.checkAccountInformations(UsernameLogin.getText(),PasswordLogin.getText())))
                 MainStageController.display();
-            }
+            else
+                LoginExceptii.displayInvalid();
+
 
         } catch (Exception e) {
             LoginExceptii.displayInvalid();

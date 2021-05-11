@@ -20,9 +20,7 @@
             </VBox.margin>
             <graphic>
                 <ImageView fitHeight="48.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@images/Error.jpg" />
-                    </image>
+                    <Image url="@images/Error.jpg"/>
                 </ImageView>
             </graphic>
         </Label>

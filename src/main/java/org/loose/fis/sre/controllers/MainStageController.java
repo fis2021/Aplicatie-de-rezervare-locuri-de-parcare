@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import static org.loose.fis.sre.services.MallService.checkMallDoesNotAlreadyExist;
 
 public class MainStageController implements  Initializable{
 
@@ -50,32 +51,47 @@ public class MainStageController implements  Initializable{
     @FXML
     private TextField MallFloors;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         TableName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         TableAdress.setCellValueFactory(new PropertyValueFactory<>("Adress"));
         TableFloors.setCellValueFactory(new PropertyValueFactory<>("Floors"));
-        for (Mall m : MallService.GetRepository().find()) {
-            list.add(m);
-        }
-
-        malluri.addAll(list);
-        Table.getItems().addAll();
-        Table.setItems(malluri);
+        Table.setItems(getMalls());
     }
 
     private ObservableList<Mall> malluri = FXCollections.observableArrayList();
-
     private ArrayList<Mall> list = new ArrayList<>();
 
-    public void handleLoginAction()  {
+    private ObservableList<Mall> getMalls()  {
+        for (Mall ma : MallService.GetRepository().find())
+            list.add(ma);
+
+        malluri.addAll(list);
+        return malluri;
+    }
+
+    public void handleAddAction() {
+
+            Mall m = new Mall();
+            if(MallName.getText().equals("") || MallAdress.getText().equals("") || MallFloors.getText().equals("")){
+                AddException.displayInvalid();
+                return;
+                }
+            m.setName(MallName.getText());
+            m.setAdress(MallAdress.getText());
+            m.setFloors(MallFloors.getText());
+
         try {
-            MallService.addMall(MallName.getText(), MallAdress.getText(), MallFloors.getText());
-        } catch (UsernameAlreadyExistsException e) {
+            checkMallDoesNotAlreadyExist(MallName.getText());
+            MallService.GetRepository().insert(m);
+            Table.getItems().add(m);
+        }catch (UsernameAlreadyExistsException e){
             AddException.displayInvalid();
         }
+
+            MallName.clear();
+            MallAdress.clear();
+            MallFloors.clear();
     }
 
     public void AddMall(){
