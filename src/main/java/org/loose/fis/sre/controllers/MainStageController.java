@@ -34,6 +34,7 @@ public class MainStageController implements  Initializable{
     @FXML
     private TableView<Mall> Table = new TableView<>();
 
+
     @FXML
     private TableColumn<Mall, String> TableName;
 
