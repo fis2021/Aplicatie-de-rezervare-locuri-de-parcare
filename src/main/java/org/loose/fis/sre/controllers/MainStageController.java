@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -28,6 +29,9 @@ public class MainStageController implements  Initializable{
     private VBox VboxTable;
 
     @FXML
+    private VBox VboxAddMall;
+
+    @FXML
     private TableView<Mall> Table = new TableView<>();
 
     @FXML
@@ -38,9 +42,6 @@ public class MainStageController implements  Initializable{
 
     @FXML
     private TableColumn<Mall, String> TableFloors;
-
-    @FXML
-    private VBox VboxAddMall;
 
     @FXML
     private TextField MallName;
@@ -72,6 +73,15 @@ public class MainStageController implements  Initializable{
 
     public void handleAddAction() {
 
+        Mall m = new Mall();
+        if(MallName.getText().equals("") || MallAdress.getText().equals("") || MallFloors.getText().equals("")){
+            AddException.displayInvalid();
+            return;
+        }
+        m.setName(MallName.getText());
+        m.setAdress(MallAdress.getText());
+        m.setFloors(MallFloors.getText());
+
             Mall m = new Mall();
             if(MallName.getText().equals("") || MallAdress.getText().equals("") || MallFloors.getText().equals("")){
                 AddException.displayInvalid();
@@ -88,6 +98,24 @@ public class MainStageController implements  Initializable{
         }catch (UsernameAlreadyExistsException e){
             AddException.displayInvalid();
         }
+
+        MallName.clear();
+        MallAdress.clear();
+        MallFloors.clear();
+    }
+    public void handleActionDelete(){
+
+        ObservableList<Mall> MallSelected , AllMalls;
+
+        AllMalls = Table.getItems();
+        MallSelected = Table.getSelectionModel().getSelectedItems();
+
+        for(Mall i : MallSelected)
+        {
+            MallService.GetRepository().remove(i);
+        }
+
+        MallSelected.forEach(AllMalls::remove);
 
             MallName.clear();
             MallAdress.clear();
