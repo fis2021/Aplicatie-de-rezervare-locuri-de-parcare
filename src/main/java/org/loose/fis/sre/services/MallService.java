@@ -23,7 +23,7 @@ public class MallService {
         MallRepository.insert(new Mall(name, adress, floors));
     }
 
-    private static void checkMallDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    public static void checkMallDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
         for (Mall mall : MallRepository.find()) {
             if (Objects.equals(username, mall.getName()))
                 throw new UsernameAlreadyExistsException(username);

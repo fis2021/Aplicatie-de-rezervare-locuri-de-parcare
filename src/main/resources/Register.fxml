@@ -36,23 +36,26 @@
         <TextField fx:id="UsernameRegister" layoutX="520.0" layoutY="124.0" prefHeight="40.0" prefWidth="228.0" promptText="Username" />
         <PasswordField fx:id="PasswordRegister" layoutX="520.0" layoutY="195.0" prefHeight="40.0" prefWidth="228.0" promptText="Password" />
         <ImageView fitHeight="261.0" fitWidth="327.0" layoutX="63.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@ImagineSingUp.png" />
+            <Image url="@images/ImagineSingUp.png" />
         </ImageView>
     </AnchorPane>
-    <AnchorPane fx:id="LoginPane" layoutX="261.0" layoutY="122.0" prefHeight="409.0" prefWidth="762.0" style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0">
-        <children>
-            <TextField fx:id="UsernameLogin" layoutX="520.0" layoutY="119.0" prefHeight="40.0" prefWidth="228.0" promptText="Username" />
-            <PasswordField fx:id="PasswordLogin" layoutX="520.0" layoutY="190.0" prefHeight="40.0" prefWidth="228.0" promptText="Password" />
-            <Button fx:id="LoginButon" layoutY="323.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="58.0" prefWidth="762.0" style="-fx-background-color: #4ea451;" text="Login" textFill="WHITE">
-                <font>
-                    <Font name="Times New Roman" size="48.0" />
-                </font>
-            </Button>
-            <ImageView fitHeight="253.0" fitWidth="279.0" layoutX="53.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@ImagineLogIn.jpg" />
-                </image>
-            </ImageView>
-        </children>
+    <AnchorPane fx:id="LoginPane" layoutX="261.0" layoutY="122.0" prefHeight="409.0" prefWidth="762.0"
+                style="-fx-background-color: #28252e;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0">
+        <TextField fx:id="UsernameLogin" layoutX="520.0" layoutY="119.0" prefHeight="40.0" prefWidth="228.0"
+                   promptText="Username"/>
+        <PasswordField fx:id="PasswordLogin" layoutX="520.0" layoutY="190.0" prefHeight="40.0" prefWidth="228.0"
+                       promptText="Password"/>
+        <Button fx:id="LoginButon" layoutY="323.0" mnemonicParsing="false" onAction="#handleLoginAction"
+                prefHeight="58.0" prefWidth="762.0" style="-fx-background-color: #4ea451;" text="Login"
+                textFill="WHITE">
+            <font>
+                <Font name="Times New Roman" size="48.0"/>
+            </font>
+        </Button>
+        <ImageView fitHeight="253.0" fitWidth="279.0" layoutX="53.0" layoutY="20.0" pickOnBounds="true"
+                   preserveRatio="true">
+            <Image url="@images/ImagineLogIn.jpg"/>
+        </ImageView>
     </AnchorPane>
 </AnchorPane>

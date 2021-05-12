@@ -82,6 +82,15 @@ public class MainStageController implements  Initializable{
         m.setAdress(MallAdress.getText());
         m.setFloors(MallFloors.getText());
 
+            Mall m = new Mall();
+            if(MallName.getText().equals("") || MallAdress.getText().equals("") || MallFloors.getText().equals("")){
+                AddException.displayInvalid();
+                return;
+                }
+            m.setName(MallName.getText());
+            m.setAdress(MallAdress.getText());
+            m.setFloors(MallFloors.getText());
+
         try {
             checkMallDoesNotAlreadyExist(MallName.getText());
             MallService.GetRepository().insert(m);
@@ -107,6 +116,10 @@ public class MainStageController implements  Initializable{
         }
 
         MallSelected.forEach(AllMalls::remove);
+
+            MallName.clear();
+            MallAdress.clear();
+            MallFloors.clear();
     }
 
     public void AddMall(){
