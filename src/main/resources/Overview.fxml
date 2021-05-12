@@ -13,185 +13,195 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1010.0" prefWidth="1930.0" style="-fx-background-color: #28252e;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainStageController">
-   <VBox layoutY="-5.0" prefHeight="1010.0" prefWidth="450.0" style="-fx-background-color: #10165F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1480.0" AnchorPane.topAnchor="0.0">
-      <Button fx:id="Home" graphicTextGap="20.0" mnemonicParsing="false" onAction="#Home" prefHeight="91.0" prefWidth="450.0" text="Home">
+<AnchorPane prefHeight="720.0" prefWidth="1400.0" style="-fx-background-color: #28252e;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainStageController">
+   <VBox layoutX="1.0" prefHeight="720.0" prefWidth="278.0" style="-fx-background-color: #10165F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1121.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="152.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
-            <Insets top="320.0" />
+            <Insets left="90.0" top="10.0"/>
+         </VBox.margin>
+         <Image url="@images/Admin.png"/>
+      </ImageView>
+      <Button graphicTextGap="20.0" mnemonicParsing="false" onAction="#Home" prefHeight="91.0" prefWidth="300.0" text="HOME">
+         <VBox.margin>
+            <Insets top="10.0" />
          </VBox.margin>
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/Home.png" />
             </ImageView>
          </graphic>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
          <font>
-            <Font name="Times New Roman" size="30.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#AddMall" prefHeight="91.0" prefWidth="450.0" text="Add Mall">
+      <Button graphicTextGap="10.0" layoutX="10.0" layoutY="330.0" mnemonicParsing="false" onAction="#AddMall" prefHeight="91.0" prefWidth="300.0" text="ADD MALL">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/p.png" />
             </ImageView>
          </graphic>
-         <font>
-            <Font name="Times New Roman" size="30.0" />
-         </font>
          <padding>
-            <Insets left="45.0" />
+            <Insets left="30.0" />
          </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="301.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="450.0" text="Delete Mall">
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="355.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="DELETE MALL">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="33.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/Minus.png" />
             </ImageView>
          </graphic>
-         <font>
-            <Font name="Times New Roman" size="30.0" />
-         </font>
          <padding>
-            <Insets left="75.0" />
+            <Insets left="53.0" />
          </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="392.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="450.0" text="Add floor">
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="380.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="ADD FLOOR">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/p.png" />
             </ImageView>
          </graphic>
-         <font>
-            <Font name="Times New Roman" size="30.0" />
-         </font>
-         <padding>
-            <Insets left="45.0" />
-         </padding>
-      </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="483.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="450.0" text="Delete floor">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@images/Minus.png" />
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="Times New Roman" size="30.0" />
-         </font>
-         <padding>
-            <Insets left="75.0" />
-         </padding>
-      </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="574.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="450.0" text="Money Bro">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@images/Cash.png" />
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="Times New Roman" size="30.0" />
-         </font>
-         <padding>
-            <Insets left="75.0" />
-         </padding>
-      </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="665.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="450.0" text="Sign out">
-         <graphic>
-            <ImageView fitHeight="40.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@images/SignOut.png" />
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="Times New Roman" size="30.0" />
-         </font>
          <padding>
             <Insets left="40.0" />
          </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="405.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="DELETE FLOOR">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@images/Minus.png" />
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets left="55.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="430.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="MONEY">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@images/Cash.png" />
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="455.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="SIGN OUT">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@images/SignOut.png" />
+            </ImageView>
+         </graphic>
+         <padding>
+            <Insets left="20.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
       </Button>
    </VBox>
-   <VBox fx:id="VboxTable" layoutX="453.0" layoutY="33.0" prefHeight="1010.0" prefWidth="1477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <Label text="Mall`s List" textFill="WHITE">
-         <font>
-            <Font size="46.0" />
-         </font>
-         <VBox.margin>
-            <Insets left="650.0" top="100.0" />
-         </VBox.margin>
-      </Label>
-      <TableView fx:id="Table" prefHeight="802.0" prefWidth="1038.0">
-         <columns>
-            <TableColumn fx:id="TableName" minWidth="500.0" prefWidth="75.0" text="Name " />
-            <TableColumn fx:id="TableAdress" minWidth="500.0" prefWidth="75.0" text="Adress" />
-            <TableColumn fx:id="TableFloors" minWidth="500.0" prefWidth="346.0" text="Number of floors" />
-         </columns>
-         <VBox.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </VBox.margin>
-      </TableView>
-   </VBox>
-   <AnchorPane layoutX="453.0" prefHeight="1010.0" prefWidth="1477.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="453.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-      <VBox fx:id="VboxAddMall" prefHeight="1010.0" prefWidth="1477.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <HBox prefHeight="108.0" prefWidth="1477.0">
-            <Label prefHeight="96.0" prefWidth="473.0" text="              Name" textAlignment="JUSTIFY" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="100.0" />
-               </HBox.margin>
-            </Label>
-            <Label layoutX="10.0" layoutY="10.0" prefHeight="96.0" prefWidth="473.0" text="              Adress" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="100.0" />
-               </HBox.margin>
-            </Label>
-            <Label layoutX="483.0" layoutY="10.0" prefHeight="96.0" prefWidth="473.0" text="        Number of floors" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font>
-               <HBox.margin>
-                  <Insets top="100.0" />
-               </HBox.margin>
-            </Label>
-         </HBox>
-         <HBox prefHeight="223.0" prefWidth="1477.0">
-            <TextField fx:id="MallName" prefHeight="50.0" prefWidth="300.0" promptText="Enter name ">
-               <HBox.margin>
-                  <Insets left="65.0" top="100.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="MallAdress" layoutX="10.0" layoutY="10.0" prefHeight="50.0" prefWidth="482.0" promptText="Enter Adress">
-               <HBox.margin>
-                  <Insets left="100.0" top="100.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="MallFloors" layoutX="475.0" layoutY="110.0" prefHeight="50.0" prefWidth="348.0" promptText="Enter number of floors">
-               <HBox.margin>
-                  <Insets left="90.0" top="100.0" />
-               </HBox.margin>
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-         </HBox>
-         <HBox prefHeight="372.0" prefWidth="1477.0">
-            <Button layoutX="160.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="144.0" prefWidth="382.0" style="-fx-background-color: #4ea451; -fx-border-color: #ffffff; -fx-border-width: 5;" text="Save" textFill="WHITE">
-               <HBox.margin>
-                  <Insets left="500.0" top="200.0" />
-               </HBox.margin>
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Button>
-         </HBox>
+   <VBox fx:id="VboxTable" layoutX="295.0" layoutY="93.0" prefHeight="720.0" prefWidth="1105.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <Label text="Mall`s list" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="38.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="450.0" top="20.0" />
+            </HBox.margin>
+         </Label>
+      </HBox>
+      <VBox prefHeight="620.0" prefWidth="1105.0">
+         <TableView fx:id="Table" prefHeight="600.0" prefWidth="1087.0">
+            <columns>
+               <TableColumn fx:id="TableName" prefWidth="345.0" text="Name" />
+               <TableColumn fx:id="TableAdress" prefWidth="383.0" text="Adress" />
+               <TableColumn fx:id="TableFloors" minWidth="0.0" prefWidth="336.0" text="Number of floors" />
+            </columns>
+            <VBox.margin>
+               <Insets bottom="20.0" left="20.0" right="20.0" />
+            </VBox.margin>
+         </TableView>
       </VBox>
-   </AnchorPane>
-
+   </VBox>
+   <VBox fx:id="VboxAddMall" layoutX="288.0" prefHeight="720.0" prefWidth="1112.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="288.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <HBox prefHeight="145.0" prefWidth="1105.0">
+         <Label prefHeight="56.0" prefWidth="101.0" text="Name" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="26.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="190.0" top="50.0" />
+            </HBox.margin>
+         </Label>
+         <Label layoutX="10.0" layoutY="10.0" prefHeight="56.0" prefWidth="101.0" text="Adress" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="26.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="220.0" top="50.0" />
+            </HBox.margin>
+         </Label>
+         <Label layoutX="111.0" layoutY="10.0" prefHeight="56.0" prefWidth="201.0" text="Number of floors" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="23.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="220.0" top="50.0" />
+            </HBox.margin>
+         </Label>
+      </HBox>
+      <HBox prefHeight="143.0" prefWidth="1105.0">
+         <TextField fx:id="MallName" prefHeight="40.0" prefWidth="220.0" promptText="Enter name">
+            <HBox.margin>
+               <Insets left="120.0" top="30.0" />
+            </HBox.margin>
+            <font>
+               <Font size="16.0" />
+            </font>
+         </TextField>
+         <TextField fx:id="MallAdress" layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="254.0" promptText="Enter Adress">
+            <HBox.margin>
+               <Insets left="100.0" top="30.0" />
+            </HBox.margin>
+            <font>
+               <Font size="16.0" />
+            </font>
+         </TextField>
+         <TextField fx:id="MallFloors" layoutX="230.0" layoutY="10.0" prefHeight="40.0" prefWidth="220.0" promptText="Enter number of floors">
+            <HBox.margin>
+               <Insets left="120.0" top="30.0" />
+            </HBox.margin>
+            <font>
+               <Font size="16.0" />
+            </font>
+         </TextField>
+      </HBox>
+      <HBox prefHeight="226.0" prefWidth="1105.0">
+         <Button mnemonicParsing="false" onAction="#handleAddAction" prefHeight="100.0" prefWidth="243.0" style="-fx-background-color: #4ea451; -fx-border-color: #ffffff; -fx-border-width: 4;" text="SAVE" textFill="WHITE">
+            <HBox.margin>
+               <Insets left="450.0" top="50.0" />
+            </HBox.margin>
+            <font>
+               <Font name="System Bold" size="20.0" />
+            </font>
+         </Button>
+      </HBox>
+   </VBox>
 </AnchorPane>
