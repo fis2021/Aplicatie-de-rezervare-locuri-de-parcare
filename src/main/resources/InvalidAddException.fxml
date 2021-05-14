@@ -11,7 +11,7 @@
 <AnchorPane prefHeight="142.0" prefWidth="348.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.exceptions.AddException">
     <VBox layoutX="133.0" layoutY="-66.0" prefHeight="142.0" prefWidth="348.0" style="-fx-border-color: #858585; -fx-border-width: 7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
 
-        <Label prefHeight="48.0" prefWidth="354.0" text=" Eroare adaugare!">
+        <Label prefHeight="48.0" prefWidth="354.0" text="        Eroare !">
             <font>
                 <Font size="20.0" />
             </font>
