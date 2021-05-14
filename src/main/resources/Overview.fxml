@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -16,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1400.0" style="-fx-background-color: #28252e;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.sre.controllers.MainStageController">
-   <VBox layoutX="1.0" prefHeight="720.0" prefWidth="278.0" style="-fx-background-color: #10165F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1121.0" AnchorPane.topAnchor="0.0">
+   <VBox layoutX="1.0" prefHeight="742.0" prefWidth="301.0" style="-fx-background-color: #10165F;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1138.0" AnchorPane.topAnchor="0.0">
       <ImageView fitHeight="152.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
          <VBox.margin>
             <Insets left="90.0" top="10.0" />
@@ -65,31 +64,31 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="380.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="ADD FLOOR">
+      <Button graphicTextGap="10.0" layoutX="10.0" layoutY="380.0" mnemonicParsing="false" onAction="#SearchFloor" prefHeight="91.0" prefWidth="300.0" text="SEARCH FLOOR">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/p.png" />
             </ImageView>
          </graphic>
          <padding>
-            <Insets left="40.0" />
+            <Insets left="60.0" />
          </padding>
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="405.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="DELETE FLOOR">
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="405.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="SET PRICE">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/Minus.png" />
             </ImageView>
          </graphic>
-         <padding>
-            <Insets left="55.0" />
-         </padding>
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
+         <padding>
+            <Insets left="30.0" />
+         </padding>
       </Button>
       <Button graphicTextGap="20.0" layoutX="10.0" layoutY="430.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="MONEY">
          <graphic>
@@ -98,7 +97,7 @@
             </ImageView>
          </graphic>
          <padding>
-            <Insets left="10.0" />
+            <Insets left="20.0" />
          </padding>
          <font>
             <Font name="System Bold" size="15.0" />
@@ -111,7 +110,7 @@
             </ImageView>
          </graphic>
          <padding>
-            <Insets left="20.0" />
+            <Insets left="30.0" />
          </padding>
          <font>
             <Font name="System Bold" size="15.0" />
@@ -134,7 +133,7 @@
             <columns>
                <TableColumn fx:id="TableName" prefWidth="345.0" text="Name" />
                <TableColumn fx:id="TableAdress" prefWidth="383.0" text="Adress" />
-               <TableColumn fx:id="TableFloors" minWidth="0.0" prefWidth="336.0" text="Number of floors" />
+               <TableColumn fx:id="TableFloors" minWidth="0.0" prefWidth="336.0" text="Location" />
             </columns>
             <VBox.margin>
                <Insets bottom="20.0" left="20.0" right="20.0" />
@@ -160,7 +159,7 @@
                <Insets left="220.0" top="50.0" />
             </HBox.margin>
          </Label>
-         <Label layoutX="111.0" layoutY="10.0" prefHeight="56.0" prefWidth="201.0" text="Number of floors" textFill="WHITE">
+         <Label layoutX="111.0" layoutY="10.0" prefHeight="56.0" prefWidth="201.0" text="      Location" textFill="WHITE">
             <font>
                <Font name="System Bold" size="23.0" />
             </font>
@@ -206,4 +205,1105 @@
          </Button>
       </HBox>
    </VBox>
+    <VBox fx:id="VboxSearch" layoutX="301.0" layoutY="154.0" prefHeight="720.0" prefWidth="1065.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="301.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label prefHeight="45.0" prefWidth="644.0" text="Enter the mall name for displaying it`s floors " textFill="WHITE">
+           <font>
+               <Font size="30.0" />
+           </font>
+           <VBox.margin>
+               <Insets left="250.0" top="80.0" />
+           </VBox.margin>
+        </Label>
+        <TextField fx:id="MallSearch" prefHeight="51.0" prefWidth="419.0">
+           <VBox.margin>
+               <Insets left="330.0" right="340.0" top="100.0" />
+           </VBox.margin>
+        </TextField>
+        <Button mnemonicParsing="false" onAction="#Afisare1" prefHeight="79.0" prefWidth="210.0" style="-fx-background-color: #4ea451; -fx-border-color: #ffffff; -fx-border-width: 4;" text="OK" textFill="WHITE">
+           <VBox.margin>
+               <Insets left="450.0" top="70.0" />
+           </VBox.margin>
+           <font>
+               <Font size="18.0" />
+           </font>
+        </Button>
+    </VBox>
+    <HBox fx:id="Mall1" layoutX="326.0" layoutY="148.0" prefHeight="720.0" prefWidth="1074.0" style="-fx-border-color: #878676; -fx-border-width: 4;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox prefHeight="720.0" prefWidth="160.0">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+                <Insets left="20.0" />
+            </HBox.margin>
+            <Button fx:id="a1" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="1">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a2" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="2">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a3" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="3">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a4" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="4">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a5" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="5">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a6" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="6">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a7" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="7">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a8" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="8">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a9" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="9">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="154.0">
+            <Label prefHeight="37.0" prefWidth="154.0" text="        Floor 1" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="100.0" />
+                </VBox.margin>
+                <Image url="@images/Direction.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction.png" />
+            </ImageView>
+        </VBox>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="160.0">
+            <Button fx:id="a10" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="10">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a11" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="11">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a12" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="12">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a13" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="13">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a14" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="14">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a15" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="15">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a16" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="16">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a17" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="17">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="a18" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="18">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+        <Separator orientation="VERTICAL" prefHeight="200.0">
+           <HBox.margin>
+               <Insets left="30.0" right="30.0" />
+           </HBox.margin>
+        </Separator>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="160.0">
+            <Button fx:id="b1" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="1">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b2" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="2">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b3" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="3">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b4" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="4">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b5" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="5">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b6" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="6">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b7" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="7">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b8" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="8">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b9" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="9">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+        <VBox layoutX="170.0" layoutY="10.0" prefHeight="720.0" prefWidth="154.0">
+            <Label prefHeight="37.0" prefWidth="154.0" text="        Floor 2" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="100.0" />
+                </VBox.margin>
+                <Image url="@images/Direction.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction.png" />
+            </ImageView>
+        </VBox>
+        <VBox layoutX="324.0" layoutY="10.0" prefHeight="720.0" prefWidth="160.0">
+            <Button fx:id="b10" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="10">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b11" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="11">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b12" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="12">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b13" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="13">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b14" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="14">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b15" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="15">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b16" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="16">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b17" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="17">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="b18" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="18">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+    </HBox>
+    <HBox fx:id="Mall2" layoutX="326.0" prefHeight="712.0" prefWidth="1084.0" style="-fx-border-color: #878676; -fx-border-width: 4;" visible="false">
+        <VBox prefHeight="720.0" prefWidth="160.0">
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <HBox.margin>
+                <Insets left="20.0" />
+            </HBox.margin>
+            <Button fx:id="c1" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="1">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c2" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="2">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c3" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="3">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c4" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="4">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c5" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="5">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c6" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="6">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c7" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="7">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c8" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="8">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c9" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="9">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="154.0">
+            <Label prefHeight="37.0" prefWidth="154.0" text="        Floor 1" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="100.0" />
+                </VBox.margin>
+                <Image url="@images/Direction2.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction2.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction2.png" />
+            </ImageView>
+        </VBox>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="160.0">
+            <Button fx:id="c10" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="10">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c11" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="11">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c12" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="12">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c13" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="13">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c14" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="14">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c15" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="15">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c16" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="16">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c17" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="17">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="c18" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="18">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+        <Separator orientation="VERTICAL" prefHeight="200.0">
+           <HBox.margin>
+               <Insets left="30.0" right="30.0" />
+           </HBox.margin>
+        </Separator>
+        <VBox layoutX="10.0" layoutY="10.0" prefHeight="720.0" prefWidth="160.0">
+            <Button fx:id="d1" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="1">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d2" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="2">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d3" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="3">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d4" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="4">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d5" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="5">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d6" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="6">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d7" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="7">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d8" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="8">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d9" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="9">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+        <VBox layoutX="170.0" layoutY="10.0" prefHeight="720.0" prefWidth="154.0">
+            <Label prefHeight="37.0" prefWidth="154.0" text="        Floor 2" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="20.0" />
+                </font>
+            </Label>
+            <ImageView fitHeight="46.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="100.0" />
+                </VBox.margin>
+                <Image url="@images/Direction2.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction2.png" />
+            </ImageView>
+            <ImageView fitHeight="46.0" fitWidth="40.0" layoutX="100.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+                <VBox.margin>
+                    <Insets left="70.0" top="180.0" />
+                </VBox.margin>
+                <Image url="@images/Direction2.png" />
+            </ImageView>
+        </VBox>
+        <VBox layoutX="324.0" layoutY="10.0" prefHeight="720.0" prefWidth="160.0">
+            <Button fx:id="d10" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="10">
+                <VBox.margin>
+                    <Insets top="10.0" />
+                </VBox.margin>
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d11" graphicTextGap="20.0" layoutX="10.0" layoutY="20.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="11">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d12" graphicTextGap="20.0" layoutX="10.0" layoutY="84.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="12">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d13" graphicTextGap="20.0" layoutX="10.0" layoutY="148.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="13">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d14" graphicTextGap="20.0" layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="14">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d15" graphicTextGap="20.0" layoutX="10.0" layoutY="276.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="15">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d16" graphicTextGap="20.0" layoutX="10.0" layoutY="340.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="16">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d17" graphicTextGap="20.0" layoutX="10.0" layoutY="404.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="17">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+            <Button fx:id="d18" graphicTextGap="20.0" layoutX="10.0" layoutY="468.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="155.0" style="-fx-background-color: #4ea451;" text="18">
+                <graphic>
+                    <ImageView fitHeight="39.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                        <Image url="@images/Car.png" />
+                    </ImageView>
+                </graphic>
+                <VBox.margin>
+                    <Insets top="15.0" />
+                </VBox.margin>
+                <font>
+                    <Font name="System Bold" size="15.0" />
+                </font>
+            </Button>
+        </VBox>
+    </HBox>
 </AnchorPane>
