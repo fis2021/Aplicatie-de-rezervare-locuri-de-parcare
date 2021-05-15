@@ -34,6 +34,9 @@ public class MainStageController implements  Initializable{
     private VBox VboxAddMall;
 
     @FXML
+    private VBox VboxAdmin;
+
+    @FXML
     private VBox VboxSearch;
 
     @FXML
@@ -130,6 +133,7 @@ public class MainStageController implements  Initializable{
         malluriPrice.addAll(list2);
         return malluriPrice;
     }
+
     public void handleAddAction() {
 
         Mall m = new Mall();
