@@ -77,7 +77,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="405.0" mnemonicParsing="false" prefHeight="91.0" prefWidth="300.0" text="SET PRICE">
+      <Button graphicTextGap="20.0" layoutX="10.0" layoutY="405.0" mnemonicParsing="false" onAction="#SetPrice" prefHeight="91.0" prefWidth="300.0" text="SET PRICE">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/Minus.png" />
@@ -185,7 +185,7 @@
                <Font size="16.0" />
             </font>
          </TextField>
-         <TextField fx:id="MallFloors" layoutX="230.0" layoutY="10.0" prefHeight="40.0" prefWidth="220.0" promptText="Enter number of floors">
+         <TextField fx:id="MallFloors" layoutX="230.0" layoutY="10.0" prefHeight="40.0" prefWidth="220.0" promptText="Enter location">
             <HBox.margin>
                <Insets left="120.0" top="30.0" />
             </HBox.margin>
@@ -214,10 +214,13 @@
                <Insets left="250.0" top="80.0" />
            </VBox.margin>
         </Label>
-        <TextField fx:id="MallSearch" prefHeight="51.0" prefWidth="419.0">
+        <TextField fx:id="MallSearch" prefHeight="51.0" prefWidth="419.0" promptText="Enter name">
            <VBox.margin>
                <Insets left="330.0" right="340.0" top="100.0" />
            </VBox.margin>
+         <font>
+            <Font size="20.0" />
+         </font>
         </TextField>
         <Button mnemonicParsing="false" onAction="#Afisare1" prefHeight="79.0" prefWidth="210.0" style="-fx-background-color: #4ea451; -fx-border-color: #ffffff; -fx-border-width: 4;" text="OK" textFill="WHITE">
            <VBox.margin>
@@ -1306,4 +1309,72 @@
             </Button>
         </VBox>
     </HBox>
+    <VBox fx:id="VboxPrice" layoutX="326.0" layoutY="87.0" prefHeight="742.0" prefWidth="1114.0" visible="false"
+          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <TableView fx:id="TablePrice" prefHeight="253.0" prefWidth="914.0">
+            <columns>
+                <TableColumn fx:id="NameMall" prefWidth="305.0" text="NamePrice"/>
+                <TableColumn fx:id="Price1Mall" minWidth="0.0" prefWidth="295.0" text="Floor1"/>
+                <TableColumn fx:id="Price2Mall" minWidth="0.0" prefWidth="313.0" text="Floor2"/>
+            </columns>
+            <VBox.margin>
+                <Insets left="100.0" right="100.0" top="30.0"/>
+            </VBox.margin>
+        </TableView>
+        <HBox prefHeight="55.0" prefWidth="1114.0">
+            <VBox.margin>
+                <Insets top="90.0"/>
+            </VBox.margin>
+            <Label prefHeight="17.0" prefWidth="224.0" text="Enter mall name :" textFill="WHITE">
+                <font>
+                    <Font size="25.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="100.0"/>
+                </HBox.margin>
+            </Label>
+            <TextField fx:id="MallNameForPrice" prefHeight="33.0" prefWidth="227.0" promptText="Name">
+                <HBox.margin>
+                    <Insets left="50.0"/>
+                </HBox.margin>
+            </TextField>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="330.0" prefHeight="55.0" prefWidth="1114.0">
+            <Label prefHeight="17.0" prefWidth="224.0" text="Enter Floor 1 price :" textFill="WHITE">
+                <font>
+                    <Font size="25.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="100.0"/>
+                </HBox.margin>
+            </Label>
+            <TextField fx:id="Price1" prefHeight="33.0" prefWidth="227.0" promptText="Price">
+                <HBox.margin>
+                    <Insets left="50.0"/>
+                </HBox.margin>
+            </TextField>
+        </HBox>
+        <HBox layoutX="10.0" layoutY="385.0" prefHeight="55.0" prefWidth="1114.0">
+            <Label prefHeight="17.0" prefWidth="224.0" text="Enter Floor 2 price :" textFill="WHITE">
+                <font>
+                    <Font size="25.0"/>
+                </font>
+                <HBox.margin>
+                    <Insets left="100.0"/>
+                </HBox.margin>
+            </Label>
+            <TextField fx:id="Price2" prefHeight="33.0" prefWidth="227.0" promptText="Price">
+                <HBox.margin>
+                    <Insets left="50.0"/>
+                </HBox.margin>
+            </TextField>
+        </HBox>
+        <Button mnemonicParsing="false" onAction="#handleAddPriceAction" prefHeight="71.0" prefWidth="241.0"
+                text="SUBMIT">
+            <VBox.margin>
+                <Insets left="200.0" top="40.0"/>
+            </VBox.margin>
+        </Button>
+    </VBox>
 </AnchorPane>
