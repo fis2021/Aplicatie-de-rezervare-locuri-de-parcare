@@ -75,9 +75,51 @@ public class ClientController implements  Initializable{
         return malluri;
     }
 
+    private int nr = 0;
+
+    public int handleAddFloorAction(int nr) {
+
+        if (MallSearch.getText().equals("")) {
+            AddException.displayInvalid();
+        }
+
+        for (Mall mall : MallService.GetRepository().find()) {
+            nr++;
+
+            if (Objects.equals(mall.getName(), MallSearch.getText())) {
+                MallSearch.clear();
+                return nr;
+            }
+        }
+
+        return 0;
+    }
+
+    public void Afisare1(){
+
+        switch (handleAddFloorAction(nr)) {
+            case 1 -> {
+                VboxSearch.setVisible(false);
+                Mall1.setVisible(true);
+            }
+            case 2 -> {
+                VboxSearch.setVisible(false);
+                Mall2.setVisible(true);
+            }
+            default -> System.out.println("Eroare afisare etaje.");
+        }
+    }
+
     public void Home(){
         VboxTable.setVisible(true);
         VboxSearch.setVisible(false);
+        Mall1.setVisible(false);
+        Mall2.setVisible(false);
+    }
+
+    public void SearchFloor(){
+        VboxTable.setVisible(false);
+        VboxSearch.setVisible(true);
         Mall1.setVisible(false);
         Mall2.setVisible(false);
     }
@@ -94,4 +136,5 @@ public class ClientController implements  Initializable{
             e.printStackTrace();
         }
     }
+
 }

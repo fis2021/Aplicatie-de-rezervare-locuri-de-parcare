@@ -38,7 +38,7 @@
                 <Font name="System Bold" size="15.0" />
             </font>
         </Button>
-        <Button graphicTextGap="10.0" layoutX="10.0" layoutY="380.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #deab2a; -fx-border-color: #853996; -fx-border-width: 3;" text="SEARCH FLOOR">
+        <Button graphicTextGap="10.0" layoutX="10.0" layoutY="380.0" mnemonicParsing="false" onAction="#SearchFloor" prefHeight="50.0" prefWidth="280.0" style="-fx-background-color: #deab2a; -fx-border-color: #853996; -fx-border-width: 3;" text="SEARCH FLOOR">
             <graphic>
                 <ImageView fitHeight="35.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                     <Image url="@images/Search.png" />
@@ -112,7 +112,7 @@
                 <Font size="20.0" />
             </font>
         </TextField>
-        <Button mnemonicParsing="false" prefHeight="79.0" prefWidth="210.0" style="-fx-background-color: #4ea451; -fx-border-color: #ffffff; -fx-border-width: 4;" text="OK" textFill="WHITE">
+        <Button mnemonicParsing="false" onAction="#Afisare1" prefHeight="79.0" prefWidth="210.0" style="-fx-background-color: #4ea451; -fx-border-color: #ffffff; -fx-border-width: 4;" text="OK" textFill="WHITE">
             <VBox.margin>
                 <Insets left="450.0" top="70.0" />
             </VBox.margin>
