@@ -48,7 +48,8 @@ public class RegisterController {
 
     @FXML
     public void initialize() {
-        ChoiceBoxRegister.getItems().addAll("Client", "Administatror Mall");
+
+        ChoiceBoxRegister.getItems().addAll("Client", "Administrator Mall");
     }
 
     @FXML
@@ -67,17 +68,18 @@ public class RegisterController {
     }
 
     public void handleLoginAction() {
-        try {
-            if((!(UsernameLogin.getText().equals("")) && !(PasswordLogin.getText().equals(""))) &&
-                    (UserService.checkAccountInformations(UsernameLogin.getText(),PasswordLogin.getText())))
-                MainStageController.display();
-            else
-                LoginExceptii.displayInvalid();
 
-
-        } catch (Exception e) {
+        if(UsernameLogin.getText().equals("") || PasswordLogin.getText().equals(""))
             LoginExceptii.displayInvalid();
-        }
+        String username = UsernameLogin.getText();
+        String password = PasswordLogin.getText();
+
+        String encryptedPass = UserService.encodePassword(username,password);
+
+        if(UserService.checkAccountInformation(username,encryptedPass) == 1)
+            ClientController.display();
+        if(UserService.checkAccountInformation(username,encryptedPass) == 2)
+            MainStageController.display();
     }
 
     public void LoginPane(){

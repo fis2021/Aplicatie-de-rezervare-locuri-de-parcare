@@ -5,7 +5,6 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.junit.jupiter.api.Test;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.User;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -37,19 +36,19 @@ public class UserService {
         }
     }
 
-    public static boolean checkAccountInformations(String username, String password) {
-        String pass = encodePassword(username,password);
-
-        for (User user : userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()) && Objects.equals(pass, user.getPassword()))
-                return true;
-        }
-
-        return false;
+    public static int checkAccountInformation(String username, String password) {
+        for (User user : UserService.userRepository.find()) {
+            if (Objects.equals(username, user.getUsername()) && Objects.equals(password, user.getPassword())) {
+                if(user.getRole().equals("Client"))
+                    return 1;
+                else if(user.getRole().equals("Administrator Mall"))
+                    return 2;
+                }
+            }
+        return 0;
     }
 
-
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
