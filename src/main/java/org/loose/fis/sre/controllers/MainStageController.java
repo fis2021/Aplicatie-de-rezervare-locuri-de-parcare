@@ -15,7 +15,9 @@ import javafx.stage.Stage;
 import org.loose.fis.sre.exceptions.AddException;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.Mall;
+import org.loose.fis.sre.model.Price;
 import org.loose.fis.sre.services.MallService;
+import org.loose.fis.sre.services.PriceService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -33,6 +35,9 @@ public class MainStageController implements  Initializable{
 
     @FXML
     private VBox VboxSearch;
+
+    @FXML
+    private VBox VboxPrice;
 
     @FXML
     private HBox Mall1;
@@ -59,6 +64,18 @@ public class MainStageController implements  Initializable{
     private TableColumn<Mall, String> TableFloors;
 
     @FXML
+    private TableView<Price> TablePrice = new TableView<>();
+
+    @FXML
+    private TableColumn<Price, String> NameMall;
+
+    @FXML
+    private TableColumn<Price, Integer> Price1Mall;
+
+    @FXML
+    private TableColumn<Price, Integer> Price2Mall;
+
+    @FXML
     private TextField MallName;
 
     @FXML
@@ -70,12 +87,26 @@ public class MainStageController implements  Initializable{
     @FXML
     private TextField MallSearch;
 
+    @FXML
+    private TextField MallNameForPrice;
+
+    @FXML
+    private TextField Price1;
+
+    @FXML
+    private TextField Price2;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         TableName.setCellValueFactory(new PropertyValueFactory<>("Name"));
         TableAdress.setCellValueFactory(new PropertyValueFactory<>("Adress"));
         TableFloors.setCellValueFactory(new PropertyValueFactory<>("Floors"));
         Table.setItems(getMalls());
+
+        NameMall.setCellValueFactory(new PropertyValueFactory<>("nume"));   ///trebuie setate ca numele campurilor din clasa respectiva
+        Price1Mall.setCellValueFactory(new PropertyValueFactory<>("price1"));
+        Price2Mall.setCellValueFactory(new PropertyValueFactory<>("price2"));
+        TablePrice.setItems(getPrice());
     }
 
     private ObservableList<Mall> malluri = FXCollections.observableArrayList();
@@ -89,6 +120,16 @@ public class MainStageController implements  Initializable{
         return malluri;
     }
 
+    private ObservableList<Price> malluriPrice = FXCollections.observableArrayList();
+    private ArrayList<Price> list2 = new ArrayList<>();
+
+    private ObservableList<Price> getPrice()  {
+        for (Price p : PriceService.getPriceRepository().find())
+            list2.add(p);
+
+        malluriPrice.addAll(list2);
+        return malluriPrice;
+    }
     public void handleAddAction() {
 
         Mall m = new Mall();
@@ -113,6 +154,40 @@ public class MainStageController implements  Initializable{
         MallFloors.clear();
     }
 
+    public void handleAddPriceAction() {
+
+        Price p = new Price();
+
+        if(MallNameForPrice.getText().equals("") || Price1.getText().equals("") || Price2.getText().equals(""))
+            AddException.displayInvalid();
+        else {
+            p.setNume(MallNameForPrice.getText());
+            p.setPrice1(Integer.parseInt(Price1.getText()));
+            p.setPrice2(Integer.parseInt(Price2.getText()));
+
+            try {
+                PriceService.checkPriceDoesNotAlreadyExist(MallNameForPrice.getText());
+            }catch (UsernameAlreadyExistsException e){
+                AddException.displayInvalid();
+            }
+                int contor = 0;
+                for (Mall ma : MallService.GetRepository().find()) {
+                    if (Objects.equals(p.getNume(), ma.getName())) {
+                        contor++;
+                        PriceService.getPriceRepository().insert(p);
+                        TablePrice.getItems().add(p);
+                    }
+                }
+
+            if (contor == 0)
+                AddException.displayInvalid();
+        }
+
+        MallNameForPrice.clear();
+        Price1.clear();
+        Price2.clear();
+    }
+
     public void handleActionDelete(){
 
         ObservableList<Mall> MallSelected , AllMalls;
@@ -127,7 +202,6 @@ public class MainStageController implements  Initializable{
 
         MallSelected.forEach(AllMalls::remove);
     }
-
 
     private int nr = 0;
 
@@ -160,7 +234,6 @@ public class MainStageController implements  Initializable{
                 VboxSearch.setVisible(false);
                 Mall2.setVisible(true);
             }
-
             default -> System.out.println("Eroare afisare etaje.");
         }
     }
@@ -171,6 +244,7 @@ public class MainStageController implements  Initializable{
         VboxSearch.setVisible(false);
         Mall1.setVisible(false);
         Mall2.setVisible(false);
+        VboxPrice.setVisible(false);
     }
 
     public void Home(){
@@ -179,6 +253,7 @@ public class MainStageController implements  Initializable{
         VboxSearch.setVisible(false);
         Mall1.setVisible(false);
         Mall2.setVisible(false);
+        VboxPrice.setVisible(false);
     }
 
     public void SearchFloor(){
@@ -187,6 +262,16 @@ public class MainStageController implements  Initializable{
         VboxSearch.setVisible(true);
         Mall1.setVisible(false);
         Mall2.setVisible(false);
+        VboxPrice.setVisible(false);
+    }
+
+    public void SetPrice(){
+        VboxAddMall.setVisible(false);
+        VboxTable.setVisible(false);
+        VboxSearch.setVisible(false);
+        Mall1.setVisible(false);
+        Mall2.setVisible(false);
+        VboxPrice.setVisible(true);
     }
 
     public static void display() {
