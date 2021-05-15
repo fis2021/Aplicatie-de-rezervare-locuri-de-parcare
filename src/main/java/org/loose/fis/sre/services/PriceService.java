@@ -4,9 +4,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.sre.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.sre.model.Price;
-
 import java.util.Objects;
-
 import static org.loose.fis.sre.services.FileSystemService.getPathToFile;
 
 public class PriceService {
