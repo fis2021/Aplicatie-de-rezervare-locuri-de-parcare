@@ -14,7 +14,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.loose.fis.sre.exceptions.AddException;
 import org.loose.fis.sre.model.Mall;
+import org.loose.fis.sre.model.Price;
 import org.loose.fis.sre.services.MallService;
+import org.loose.fis.sre.services.PriceService;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -28,6 +30,12 @@ public class ClientController implements  Initializable{
 
     @FXML
     private VBox VboxSearch;
+
+    @FXML
+    private VBox VboxPlata;
+
+    @FXML
+    private VBox VboxPrices;
 
     @FXML
     private HBox Mall1;
@@ -54,10 +62,29 @@ public class ClientController implements  Initializable{
     private TableColumn<Mall, String> TableFloors;
 
     @FXML
+    private TableView<Price> TablePrice = new TableView<>();
+
+    @FXML
+    private TableColumn<Price, String> NameMall;
+
+    @FXML
+    private TableColumn<Price, Integer> Price1Mall;
+
+    @FXML
+    private TableColumn<Price, Integer> Price2Mall;
+
+    @FXML
     private TextField MallSearch;
 
     @FXML
+    private TextField PIN;
+
+    @FXML
     private Button SignOutClient;
+
+    public Button SUBMIT;
+
+    private static final int COD_CARD = 1234;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,6 +92,11 @@ public class ClientController implements  Initializable{
         TableAdress.setCellValueFactory(new PropertyValueFactory<>("Adress"));
         TableFloors.setCellValueFactory(new PropertyValueFactory<>("Floors"));
         Table.setItems(getMalls());
+
+        NameMall.setCellValueFactory(new PropertyValueFactory<>("nume"));   ///trebuie setate ca numele campurilor din clasa respectiva
+        Price1Mall.setCellValueFactory(new PropertyValueFactory<>("price1"));
+        Price2Mall.setCellValueFactory(new PropertyValueFactory<>("price2"));
+        TablePrice.setItems(getPrice());
     }
 
     private ObservableList<Mall> malluri = FXCollections.observableArrayList();
@@ -76,6 +108,17 @@ public class ClientController implements  Initializable{
 
         malluri.addAll(list);
         return malluri;
+    }
+
+    private ObservableList<Price> malluriPrice = FXCollections.observableArrayList();
+    private ArrayList<Price> list2 = new ArrayList<>();
+
+    private ObservableList<Price> getPrice()  {
+        for (Price p : PriceService.getPriceRepository().find())
+            list2.add(p);
+
+        malluriPrice.addAll(list2);
+        return malluriPrice;
     }
 
     private int nr = 0;
@@ -104,18 +147,15 @@ public class ClientController implements  Initializable{
             case 1 -> {
                 VboxSearch.setVisible(false);
                 Mall1.setVisible(true);
+                VboxPlata.setVisible(true);
             }
             case 2 -> {
                 VboxSearch.setVisible(false);
                 Mall2.setVisible(true);
+                VboxPlata.setVisible(true);
             }
             default -> System.out.println("Eroare afisare etaje.");
         }
-    }
-
-    public void ceva() {
-        pas2(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18);
-        pas2(g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18);
     }
 
     private void pas2(Button g1, Button g2, Button g3, Button g4, Button g5, Button g6, Button g7, Button g8, Button g9, Button g10, Button g11, Button g12, Button g13, Button g14, Button g15, Button g16, Button g17, Button g18, Button h1, Button h2, Button h3, Button h4, Button h5, Button h6, Button h7, Button h8, Button h9, Button h10, Button h11, Button h12, Button h13, Button h14, Button h15, Button h16, Button h17, Button h18) {
@@ -137,11 +177,26 @@ public class ClientController implements  Initializable{
         g18.setOnMouseClicked(e -> g18.setStyle("-fx-background-color: #ad1010"));
     }
 
+    public void Submit(){
+
+        if(PIN.getText().equals(String.valueOf(COD_CARD))) {
+            pas2(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18);
+            pas2(g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18);
+            PIN.clear();
+        }
+        else {
+            PIN.clear();
+            AddException.displayInvalid();
+        }
+    }
+
     public void Home(){
         VboxTable.setVisible(true);
         VboxSearch.setVisible(false);
         Mall1.setVisible(false);
         Mall2.setVisible(false);
+        VboxPlata.setVisible(false);
+        VboxPrices.setVisible(false);
     }
 
     public void SearchFloor(){
@@ -149,6 +204,17 @@ public class ClientController implements  Initializable{
         VboxSearch.setVisible(true);
         Mall1.setVisible(false);
         Mall2.setVisible(false);
+        VboxPlata.setVisible(false);
+        VboxPrices.setVisible(false);
+    }
+
+    public void SearchPrices(){
+        VboxTable.setVisible(false);
+        VboxSearch.setVisible(false);
+        Mall1.setVisible(false);
+        Mall2.setVisible(false);
+        VboxPlata.setVisible(false);
+        VboxPrices.setVisible(true);
     }
 
     public void SignOut()
