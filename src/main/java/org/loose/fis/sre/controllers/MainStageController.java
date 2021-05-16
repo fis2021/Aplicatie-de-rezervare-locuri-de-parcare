@@ -49,12 +49,6 @@ public class MainStageController implements  Initializable{
     private HBox Mall2;
 
     @FXML
-    private Button a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18;
-
-    @FXML
-    private Button c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18;
-
-    @FXML
     private TableView<Mall> Table = new TableView<>();
 
     @FXML
@@ -98,6 +92,9 @@ public class MainStageController implements  Initializable{
 
     @FXML
     private TextField Price2;
+
+    @FXML
+    private Button SignOutAdmin;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -276,6 +273,12 @@ public class MainStageController implements  Initializable{
         Mall1.setVisible(false);
         Mall2.setVisible(false);
         VboxPrice.setVisible(true);
+    }
+
+    public void SignOut()
+    {
+        Stage stage = (Stage) SignOutAdmin.getScene().getWindow();
+        stage.close();
     }
 
     public static void display() {
