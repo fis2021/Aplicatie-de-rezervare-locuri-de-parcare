@@ -36,10 +36,10 @@ public class ClientController implements  Initializable{
     private HBox Mall2;
 
     @FXML
-    private Button a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,a16,a17,a18,b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14,b15,b16,b17,b18;
+    private Button e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15,f16,f17,f18;
 
     @FXML
-    private Button c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14,c15,c16,c17,c18,d1,d2,d3,d4,d5,d6,d7,d8,d9,d10,d11,d12,d13,d14,d15,d16,d17,d18;
+    private Button g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12,g13,g14,g15,g16,g17,g18,h1,h2,h3,h4,h5,h6,h7,h8,h9,h10,h11,h12,h13,h14,h15,h16,h17,h18;
 
     @FXML
     private TableView<Mall> Table = new TableView<>();
@@ -55,6 +55,9 @@ public class ClientController implements  Initializable{
 
     @FXML
     private TextField MallSearch;
+
+    @FXML
+    private Button SignOutClient;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -110,6 +113,30 @@ public class ClientController implements  Initializable{
         }
     }
 
+    public void ceva() {
+        pas2(e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11, e12, e13, e14, e15, e16, e17, e18, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14, f15, f16, f17, f18);
+        pas2(g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, h15, h16, h17, h18);
+    }
+
+    private void pas2(Button g1, Button g2, Button g3, Button g4, Button g5, Button g6, Button g7, Button g8, Button g9, Button g10, Button g11, Button g12, Button g13, Button g14, Button g15, Button g16, Button g17, Button g18, Button h1, Button h2, Button h3, Button h4, Button h5, Button h6, Button h7, Button h8, Button h9, Button h10, Button h11, Button h12, Button h13, Button h14, Button h15, Button h16, Button h17, Button h18) {
+        pas(g1, g2, g3, g4, g5, g6, g7, g8, g9);
+        pas(g10, g11, g12, g13, g14, g15, g16, g17, g18);
+        pas(h1, h2, h3, h4, h5, h6, h7, h8, h9);
+        pas(h10, h11, h12, h13, h14, h15, h16, h17, h18);
+    }
+
+    private void pas(Button g10, Button g11, Button g12, Button g13, Button g14, Button g15, Button g16, Button g17, Button g18) {
+        g10.setOnMouseClicked(e -> g10.setStyle("-fx-background-color: #ad1010"));
+        g11.setOnMouseClicked(e -> g11.setStyle("-fx-background-color: #ad1010"));
+        g12.setOnMouseClicked(e -> g12.setStyle("-fx-background-color: #ad1010"));
+        g13.setOnMouseClicked(e -> g13.setStyle("-fx-background-color: #ad1010"));
+        g14.setOnMouseClicked(e -> g14.setStyle("-fx-background-color: #ad1010"));
+        g15.setOnMouseClicked(e -> g15.setStyle("-fx-background-color: #ad1010"));
+        g16.setOnMouseClicked(e -> g16.setStyle("-fx-background-color: #ad1010"));
+        g17.setOnMouseClicked(e -> g17.setStyle("-fx-background-color: #ad1010"));
+        g18.setOnMouseClicked(e -> g18.setStyle("-fx-background-color: #ad1010"));
+    }
+
     public void Home(){
         VboxTable.setVisible(true);
         VboxSearch.setVisible(false);
@@ -124,6 +151,12 @@ public class ClientController implements  Initializable{
         Mall2.setVisible(false);
     }
 
+    public void SignOut()
+    {
+        Stage stage = (Stage) SignOutClient.getScene().getWindow();
+        stage.close();
+    }
+
     public static void display() {
         Stage window = new Stage();
         Parent root ;
@@ -136,5 +169,4 @@ public class ClientController implements  Initializable{
             e.printStackTrace();
         }
     }
-
 }
